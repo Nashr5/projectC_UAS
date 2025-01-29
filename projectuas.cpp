@@ -49,6 +49,9 @@ void sort(int arr[], int n)
 //fungsi utama program (input manual oleh user)
 int main()
 {
+    cout << "############### Program Pencarian dan Pengurutan Array ###############\n";
+    cout << endl;
+    cout << "############### Input ukuran array dan nilai array ####################\n";
     int n;
     // menginputkan ukuran array
     cout << "Masukkan ukuran array: ";
@@ -63,23 +66,29 @@ int main()
         cin >> data[i];
     }
 
+    cout << "\n############### Input nilai yang dicari ####################\n";
     int x;
     // menginputkan nilai yang dicari
     cout << "Masukkan nilai yang dicari: ";
     cin >> x;
 
+    cout << "\n############### Hasil Pencarian array ####################\n";
     // memanggil fungsi pencarian
     int result = pencarian(data, n, x);
     // seleksi kondisi jika nilai result sama dengan -1
     if (result == -1)
     {
-        cout << "Nilai tidak ditemukan";
+        cout << "Nilai tidak ditemukan" << endl;
     }
     // seleksi kondisi jika nilai result tidak sama dengan -1
     else
     {
-        cout << "Nilai ditemukan pada indeks ke-" << result;
+        cout << "Nilai ditemukan pada indeks ke-" << result << endl;
     }
+
+
+    cout << "\n############### Hasil Pengurutan array ####################";
+
 
     cout << "\nArray sebelum diurutkan: ";
     // perulangan for untuk menampilkan nilai array sebelum diurutkan
@@ -88,11 +97,12 @@ int main()
         // menampilkan nilai array
         cout << data[i] << " ";
     }
+    cout << endl;
 
     // memanggil fungsi sorting
     sort(data, n);
-   
-    cout << "\nArray setelah diurutkan: ";
+
+    cout << "Array setelah diurutkan: ";
     // perulangan for untuk menampilkan nilai array setelah diurutkan
     for (int i = 0; i < n; i++)
     {
