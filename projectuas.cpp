@@ -19,29 +19,32 @@ int pencarian(int arr[], int n, int x)
     return -1;
 }
 
-//metode sorting dengan bubble sort
+//metode sorting dengan selection sort
 void sort(int arr[], int n)
 {
-    int i, j, temp;
-    // perulangan for untuk mengurutkan array
+    int i, j, idx, temp;
+    // perulangan for untuk mengurutkan nilai array
     for (i = 0; i < n - 1; i++)
     {
-        // perulangan for untuk membandingkan nilai array
+        idx = i;
+        // perulangan for untuk mencari nilai terkecil
         for (j = i + 1; j < n; j++)
         {
-            // seleksi kondisi jika nilai array i lebih besar dari nilai array j
-            if (arr[i] > arr[j])
+            // seleksi kondisi jika nilai array lebih kecil dari nilai array idx
+            if (arr[j] < arr[idx])
             {
-                // menukar nilai array i dengan nilai array j
-                temp = arr[i];
-                // nilai array i diisi dengan nilai array j
-                arr[i] = arr[j];
-                // nilai array j diisi dengan nilai temp
-                arr[j] = temp;
+                idx = j;
             }
         }
+        // pertukaran nilai array
+        temp = arr[idx];
+        arr[idx] = arr[i];
+        arr[i] = temp;
     }
 }
+
+
+
 
 //fungsi utama program (input manual oleh user)
 int main()
@@ -78,8 +81,17 @@ int main()
         cout << "Nilai ditemukan pada indeks ke-" << result;
     }
 
+    cout << "\nArray sebelum diurutkan: ";
+    // perulangan for untuk menampilkan nilai array sebelum diurutkan
+    for (int i = 0; i < n; i++)
+    {
+        // menampilkan nilai array
+        cout << data[i] << " ";
+    }
+
     // memanggil fungsi sorting
     sort(data, n);
+   
     cout << "\nArray setelah diurutkan: ";
     // perulangan for untuk menampilkan nilai array setelah diurutkan
     for (int i = 0; i < n; i++)
