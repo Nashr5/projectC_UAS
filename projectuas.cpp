@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// metode searching
+// metode searching dengan linear search
 int pencarian(int arr[], int n, int x)
 {
     int i;
@@ -19,7 +19,7 @@ int pencarian(int arr[], int n, int x)
     return -1;
 }
 
-//metode sorting
+//metode sorting dengan bubble sort
 void sort(int arr[], int n)
 {
     int i, j, temp;
@@ -43,7 +43,7 @@ void sort(int arr[], int n)
     }
 }
 
-//fungsi utama tapi input oleh user manual
+//fungsi utama program (input manual oleh user)
 int main()
 {
     int n;
